@@ -1,0 +1,23 @@
+1-> npm install -g @angular/cli
+2-> ng new <project_name>
+3-> cd <project_name>
+4-> ng serve
+
+inside <priject_name> dir 
+5-> npm install --save bootstrap@3
+
+now go to angular.json which is inside (project_name) folder and modifiy 
+ "styles": [
+              "src/styles.css"
+            ]
+
+      to
+
+ "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "src/styles.css"
+            ]
+
+
+----------------------------------------------------------------------
+---> ng generate component servers
