@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  name = 'manish';
+	enable = false;
+  name = '';
+  serverName="";
+createServer()
+{
+	this.serverName=this.name;
+	this.name="";
+}
+
 }

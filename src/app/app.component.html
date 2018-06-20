@@ -2,7 +2,11 @@
   <div class="row">
     <div class="col-xs 12">
       <h1>This is my first Angular App!</h1>
-      <app-servers></app-servers>
-    </div>
+      <!-- <app-servers></app-servers> -->
+      <!-- <div class=app-servers></div> -->
+	<!-- <p *ngIf="name!==''">server is created. name is:-{{serverName}} </p> -->
+      <input class="form-control" type="text" [(ngModel)]="name">
+      <button [disabled]="name===''" class="btn btn-danger" (click)="createServer()">Create Server</button>
+      <!-- <app-servers></app-servers> -->
   </div>
 </div>
