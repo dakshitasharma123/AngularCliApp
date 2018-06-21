@@ -7,8 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 	enable = false;
-  name = '';
-  serverName="";
+  	name = '';
+    serverName="";
 createServer()
 {
 	this.serverName=this.name;
