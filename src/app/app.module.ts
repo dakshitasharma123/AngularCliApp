@@ -6,10 +6,11 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import  {ServerComponent} from './server/server.component';
 import { ServersComponent } from './servers/servers.component';
+import { Ngs } from './ngstyle/ngs.component';
 
 
 @NgModule({
-  declarations: [AppComponent,ServerComponent, ServersComponent],
+  declarations: [AppComponent,ServerComponent, ServersComponent,Ngs],
   imports: [
   	BrowserModule,
   	FormsModule

@@ -4,10 +4,19 @@
       <h1>This is my first Angular App!</h1>
       <!-- <app-servers></app-servers> -->
       <!-- <div class=app-servers></div> -->
+	<p *ngIf="serverName!==''; else noServer">server is created. name is:-{{serverName}} </p>
+	<ng-template #noServer>		
+		<p>no server is created</p>
+	</ng-template>
+	<!-- we can also write same line *ngIf
 	<p *ngIf="serverName!==''">server is created. name is:-{{serverName}} </p>
+	<p *ngIf="serverName===''">no server is created </p> -->
       <input class="form-control" type="text" [(ngModel)]="name">
       <p>{{name}}</p>
       <button [disabled]="name===''" class="btn btn-danger" (click)="createServer()">Create Server</button>
       <!-- <app-servers></app-servers> -->
+      <ngs></ngs>
+      <ngs></ngs>
+      <ngs></ngs>
   </div>
 </div>
