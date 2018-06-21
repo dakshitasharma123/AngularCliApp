@@ -10,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 export class ServersComponent implements OnInit {
 	  	enable=true;
 	  	serverstatus="Server is Disable";
+	  	toggle=false;
 	  	inputvalue="";
+	  	SERVERS = ['server1'];
+	  	log=[];
+	  	random=0.5;
 
   constructor() { 
   	setTimeout(()=>{
@@ -21,11 +25,16 @@ export class ServersComponent implements OnInit {
 
   ngOnInit() {
 
-
+  }
+  saveLog()
+  {
+  	this.random=Math.random();
+  	this.toggle=!this.toggle;
+  	this.log.push(this.log.length +1);
   }
   creteNewServer(){
   				this.serverstatus="Server is Started. Server name is :- "+this.inputvalue;
-  				this.inputvalue="";
+  				this.SERVERS.push(this.inputvalue);
   			}
   onInputUpdate(e){
   	//this.inputvalue=e.target.value;

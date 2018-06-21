@@ -1,10 +1,16 @@
-
 <p [innerHTML]="serverstatus"></p>
-<hr>
+<!-- <p *ngIf="!toggle">click for toggling</p>
+<button class="btn btn-primary" (click)="toggle=!toggle">Toggle</button> -->
+<p >click for toggling</p>
+<button class="btn btn-primary" (click)="saveLog()">Toggle</button>
+<br>
+<div *ngFor="let total of log" class="col-xs-1" [ngStyle]="{backgroundColor:total%2==0 ? 'red': 'green'}">{{total}}</div>
+<br>
 <label for="">Enter Server Name</label>
 <!-- <input type="text" class="form-control" (input)="onInputUpdate($event)"> -->
    <input type="text" class="form-control" [(ngModel)]="inputvalue">
    <p> {{inputvalue}} </p>
    <button class="btn btn-primary"
  [disabled]="!enable"  (click)="creteNewServer()">Start Server</button>
-<app-server></app-server>
+ <p *ngFor="let Server of SERVERS">{{Server}}</p>
+<ngs *ngFor="let Server of SERVERS"></ngs>
