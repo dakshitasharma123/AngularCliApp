@@ -1,0 +1,11 @@
+components:-
+
+To create component with CLI type (ng gentrate component <coponent_name> --spec false) //--spec false is optional.if we don't write this an another testing file is created which we don't need here.
+
+1-app/header
+2-app/recipes
+3-app/recipes/recipe-list
+4-app/recipes/recipe-detail
+5-app/recipes/recipe-list/recipe-item
+6-app/shopping-list
+7-app/sopping-list/shopping-edit
