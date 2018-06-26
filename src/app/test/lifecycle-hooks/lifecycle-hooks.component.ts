@@ -9,7 +9,8 @@ import { Component,
  AfterContentChecked,
  AfterViewInit,
  ViewChild,
- ElementRef
+ ElementRef,
+ ContentChild
   } from '@angular/core';
 
 @Component({
@@ -29,6 +30,7 @@ AfterViewInit
 @Input() element:{type:string,name:string,content:string};
 @Input() name:string;
 @ViewChild('heading') header:ElementRef;
+@ContentChild('contentParagraph') paragraph:ElementRef;
 
   constructor() {
   console.log("constructor is called!");
@@ -36,9 +38,8 @@ AfterViewInit
 
   ngOnInit() {
   	console.log("ngOnInit is called!");
-  	console.log('text content:-'+this.header.nativeElement.textContent);// you can't check some value of the 
-                                                                        //element in a Dom before View is Init
-                                                                        
+  	console.log('text content:-'+this.header.nativeElement.textContent);// you can't check any value of the element in a Dom before View is Init
+    console.log('text content of paragraph:-'+this.paragraph.nativeElement.textContent);//cant access this content before ngAfterContentInit hook is invoke                                                                     
   }
   ngOnChanges(changes:SimpleChanges){
   	console.log("ngOnChanges is called!");
@@ -49,6 +50,7 @@ AfterViewInit
   }
   ngAfterContentInit(){
   	console.log("ngAfterContentInit is called!");
+    console.log('text content of paragraph:-'+this.paragraph.nativeElement.textContent);//now you can access this content after ngAfterContentInit hook is invoke
   }
   ngAfterContentChecked(){
   	console.log("ngAfterContentChecked is called!");

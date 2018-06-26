@@ -12,12 +12,10 @@
       <button class="btn btn-danger" (click)="onChange()">Change Server Name</button>
       <button class="btn btn-danger" (click)="onDelete()">Distroy component</button>
       <app-lifecycle-hooks *ngFor="let xyz of serverElement" [element]="xyz" [name]="xyz.name">
-<!--       	<div class="panel-body">
-          <p>
+          <p #contentParagraph>
             <strong *ngIf="xyz.type === 'server'" style="color: red">{{ xyz.content }}</strong>
             <em *ngIf="xyz.type === 'blueprint'" style="color: blue">{{ xyz.content }}</em>
           </p>
-        </div> -->
       </app-lifecycle-hooks>
   </div>
 </div>
