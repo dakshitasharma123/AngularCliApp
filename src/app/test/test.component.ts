@@ -1,34 +1,36 @@
-import { Component, OnInit,OnChanges,SimpleChanges} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './test.component.html',
   styleUrls: ['./test.component.css']
 })
-export class TestComponent implements OnInit,OnChanges{
-	 peoples=[{name:'manish',roll:'m160043ca',class:'mca'}];
-	 Servers=[];
+export class TestComponent implements OnInit {
+  serverElement=[{type:'server',name:'testServer', content:'just a test'}];
+onServerAdded(serverData:{serverName:string,serverContent:string}){
+  this.serverElement.push({
+    type:'server',
+    name:serverData.serverName,
+    content:serverData.serverContent
+  });
+}
+onBlueprintAdded(blueprintData:{serverName:string, serverContent:string}){
+  this.serverElement.push({
+    type:'blueprint',
+    name:blueprintData.serverName,
+    content:blueprintData.serverContent
+  });
+}
 
-  constructor() { 
-  }
+  constructor() { }
 
   ngOnInit() {
+  }
+  onChange(){
+    this.serverElement[0].name="manish1";
+  }
+  onDelete(){
+    this.serverElement.splice(0,1);
+  }
 
-  }
-    ngOnChanges(changes:SimpleChanges){
-  	console.log("ngOnChanges is called!");
-  	console.log(changes);
-  }
-
-
-  serverDetail(event:{name:string , type:string})
-  {
-  		this.Servers.push({name:event.name ,type:event.type });
-  }
-  changeServername(){
-  	this.peoples[0].name="kajal";
-  }
-    changeServername1(){
-  	this.peoples.splice(0);
-  }
 }

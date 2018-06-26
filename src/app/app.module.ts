@@ -16,15 +16,30 @@ import { SubTestComponent } from './test/sub-test/sub-test.component';
 import { Test1Component } from './test1/test1.component';
 import { CockpitComponent } from './test1/cockpit/cockpit.component';
 import { ServerElementComponent } from './test1/server-element/server-element.component';
+import { LifecycleHooksComponent } from './test/lifecycle-hooks/lifecycle-hooks.component';
 
 
 @NgModule({
-  declarations: [AppComponent,HeaderComponent, RecipesComponent, RecipeListComponent, RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent, TestComponent, SubTestComponent, Test1Component, CockpitComponent, ServerElementComponent],
+  declarations: [AppComponent,
+  HeaderComponent,
+   RecipesComponent,
+    RecipeListComponent,
+     RecipeDetailComponent,
+      RecipeItemComponent,
+       ShoppingListComponent,
+        ShoppingEditComponent,
+         TestComponent,
+          SubTestComponent,
+           Test1Component,
+            CockpitComponent,
+             ServerElementComponent,
+             LifecycleHooksComponent
+             ],
   imports: [
   	BrowserModule,
-  	FormsModule
+  	 FormsModule
   ],
   providers: [],
-  bootstrap: [Test1Component]
+  bootstrap: [TestComponent]
 })
 export class AppModule { }
