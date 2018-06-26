@@ -9,5 +9,5 @@ export class Ingredient{
 	// the same thing you can also write like this(below code) 
 	// constructor(public name:string, public amount:number){
 
-	}
+	
 }
