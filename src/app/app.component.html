@@ -1,7 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-xs 12">
-      <h1>This is root component</h1>
+      <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
+    </div>
+  </div>
+    <div class="row">
+    <div class="col-xs-6">
+      <app-odd *ngFor="let number of oddNumbers" [oddNumber]="number"></app-odd>
+    </div>
+    <div class="col-xs-6">
+      <app-even *ngFor="let number1 of evenNumbers" [evenNumber]="number1"></app-even>
     </div>
   </div>
 </div>
