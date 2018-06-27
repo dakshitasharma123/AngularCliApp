@@ -23,3 +23,10 @@
     </div>
   </div>
 </div>
+<hr>
+<div class="container" [ngSwitch]="inputValue">
+  <p *ngSwitchCase="1"> value is 1</p>
+  <p *ngSwitchCase="10"> value is 10</p>
+  <p *ngSwitchCase="100"> value is 100</p>
+  <p *ngSwitchCase="1000"> value is 1000</p>
+</div>
