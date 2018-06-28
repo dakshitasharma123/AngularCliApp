@@ -1,8 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
  import { FormsModule} from '@angular/forms';
-
-
+import {HttpModule} from '@angular/http';
 import { AppComponent } from './app.component';
 import {HeaderComponent} from './header/header.component';
 import { RecipesComponent } from './recipes/recipes.component';
@@ -12,15 +11,19 @@ import { RecipeItemComponent } from './recipes/recipe-list/recipe-item/recipe-it
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
 import { DropdownDirective } from './shared/dropdown.directive';
-
+import { TasksComponent } from './components/tasks/tasks.component';
+import {TaskService} from './services/task.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
-  declarations: [AppComponent,HeaderComponent, RecipesComponent, RecipeListComponent, RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent, DropdownDirective],
+  declarations: [AppComponent,HeaderComponent, RecipesComponent, RecipeListComponent, RecipeDetailComponent, RecipeItemComponent, ShoppingListComponent, ShoppingEditComponent, DropdownDirective, TasksComponent],
   imports: [
   	BrowserModule,
-  	FormsModule
+  	FormsModule,
+  	HttpModule,
+  	HttpClientModule
   ],
-  providers: [],
+  providers: [TaskService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
