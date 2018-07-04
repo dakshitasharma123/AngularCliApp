@@ -8,6 +8,10 @@ import { GameControlComponent } from './game-control/game-control.component';
 import { OddComponent } from './odd/odd.component';
 import {BasicHighlightDirective} from './basic-highlight/basic-highlight.directive';
 import { BetterHighlightDirective } from './better-highlight/better-highlight.directive';
+import { HomeComponent } from './home/home.component';
+import { UserComponent } from './user/user.component';
+import {AppRoutingModule} from './app-routing.module';
+import {UserService} from './user.service';
 
 
 @NgModule({
@@ -17,13 +21,16 @@ import { BetterHighlightDirective } from './better-highlight/better-highlight.di
     GameControlComponent,
      OddComponent,
       BasicHighlightDirective,
-      BetterHighlightDirective
+      BetterHighlightDirective,
+      HomeComponent,
+      UserComponent
       ],
   imports: [
   	BrowserModule,
-  	 FormsModule
+  	 FormsModule,
+     AppRoutingModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

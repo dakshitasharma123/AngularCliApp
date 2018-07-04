@@ -1,4 +1,4 @@
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-xs 12">
       <app-game-control (intervalFired)="onIntervalFired($event)"></app-game-control>
@@ -29,4 +29,16 @@
   <p *ngSwitchCase="10"> value is 10</p>
   <p *ngSwitchCase="100"> value is 100</p>
   <p *ngSwitchCase="1000"> value is 1000</p>
+</div>
+ -->
+ <div class="container">
+  <div class="row">
+    <div class="col-xs 12">
+      <button class="btn btn-primary" routerLink="/home">go to home</button>
+      <button class="btn btn-primary" routerLink="/user">go to user</button>
+      <a routerLink="user/1">user 1 {{ActivatedUser1 ? 'activated' : ' '}}</a>
+      <a routerLink="user/2">user 2 {{ActivatedUser2 ? 'activated' : ' '}}</a>
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
