@@ -8,7 +8,9 @@
 					class="btn btn-success">Save
 					</button>
 					<button  type="button"
-					 class="btn btn-danger">Cancel
+					 class="btn btn-danger"
+					 (click)="onCancle()"
+					 >Cancel
 					</button>
 				</div>
 			</div>
@@ -32,13 +34,14 @@
 						 class="form-control"
 						 id="imagePath"
 						 formControlName="imagePath"
+						 #imagepath
 						 >
 					</div>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-xs-12">
-					<img src="" alt="fdgd" class="img-responsive">
+					<img [src]="imagepath.value" alt="" class="img-responsive">
 				</div>
 			</div>
 			<div class="row">
@@ -75,7 +78,11 @@
 							 >
 						</div>
 						<div class="col-xs-2">
-							<button class="btn btn-danger">X</button>
+							<button 
+							class="btn btn-danger"
+							type="button"
+							(click)="onDeleteIngredient(i)"
+							>X</button>
 						</div>
 					</div>
 				</div>
