@@ -1,11 +1,23 @@
-<app-header (featureSelected)="onNavigate($event)"></app-header>
 <div class="container">
   <div class="row">
-    <div class="col-xs 12">
-<!--       <h1>This is root component</h1> -->
-      <!-- <app-recipes *ngIf="loadedFeature==='recipe'"> </app-recipes>
-      <app-shopping-list *ngIf="loadedFeature==='shopping-list'"></app-shopping-list> -->
-      <router-outlet></router-outlet>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <input type="text" class="form-control" [(ngModel)]="filterstatus" (input)="onInput()">
+      <button class="btn btn-primary" (click)="onAddServer()">Add Server</button>
+      <hr>
+      <h2>App status:{{appStatus | async}}</h2>
+      <ul class="list-group">
+        
+        <li
+          class="list-group-item"
+          *ngFor="let server of servers | filter:filterstatus"
+          [ngClass]="getStatusClasses(server)">
+          <span
+            class="badge">
+            {{ server.status }}
+          </span>
+          <strong>{{ server.name }}</strong> | {{ server.instanceType }} | {{ server.started }}
+        </li>
+      </ul>
     </div>
   </div>
 </div>
