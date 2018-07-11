@@ -33,5 +33,9 @@ this.ingredientChanged.next(this.ingredients.slice());
 		this.ingredients.splice(index,1);
 		this.ingredientChanged.next(this.ingredients.slice());
 	}
+	setIngredient(ingredient:Ingredient[]){
+		this.ingredients=ingredient;
+		this.ingredientChanged.next(this.ingredients.slice());
+	}
 
 }
