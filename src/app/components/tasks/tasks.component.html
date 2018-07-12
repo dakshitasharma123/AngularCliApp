@@ -15,7 +15,9 @@
 	</div>
 </div>
 <div class="container">
+	<a (click)="onGet()">get</a>
+	<a (click)="onSave()">save</a>
 	<div *ngFor="let student of Students">
-		<p>{{student.title}} and {{student.isDone}}</p>
+		<p>{{student._id}} ,{{student.title}} and {{student.isDone}}</p>
 	</div>
 </div>
