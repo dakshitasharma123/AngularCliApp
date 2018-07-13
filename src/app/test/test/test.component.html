@@ -1,0 +1,11 @@
+<div class="container">
+	<div class="row">
+		<button class="btn btn-primary" (click)="onGet()">Get</button>
+		<button class="btn btn-danger" (click)="onSave()">Save</button>
+		<h2>Details are:- </h2>
+	<div *ngFor="let student of Students">
+		<p *ngIf="student.title">{{student._id}}, {{student.title}} and {{student.isDone}}</p>
+		<p *ngIf="student.name">{{student._id}}, {{student.name}} and {{student.roll}}</p>
+	</div>
+	</div>
+</div>

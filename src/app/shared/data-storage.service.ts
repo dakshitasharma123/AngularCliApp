@@ -4,12 +4,15 @@ import {RecipeService} from '../recipes/recipe.service';
 import {ShoppingListService} from '../shopping-list/shopping-list.service';
 import {Recipe} from '../recipes/recipe.model';
 import {Ingredient} from './ingredient.model';
-
 import 'rxjs/Rx';
 
 
 @Injectable()
 export class DataStorageService{
+	Student={
+		'title':'manish',
+		'isDone':true
+	}
 	constructor(private http:Http ,private recipeservice:RecipeService,
 				private shoppinglistservice:ShoppingListService){}
 	storeRecipe(){
@@ -42,4 +45,10 @@ export class DataStorageService{
 			this.shoppinglistservice.setIngredient(ingredient);
 		});
 	}
+	getTasks(){
+   	return this.http.get("http://localhost:3000/api/tasks");
+   }
+   storeTask(){
+   	return this.http.post("http://localhost:3000/api/task",this.Student);
+   }
 }
