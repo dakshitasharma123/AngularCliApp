@@ -80,7 +80,7 @@ export class RecipeEditComponent implements OnInit {
   	}
   	this.recipeForm.reset();
   	this.onCancle();
-  	//console.log(this.recipeForm);
+  	console.log(this.recipeForm);
   }
   onCancle(){
   	this.router.navigate(['../'],{relativeTo:this.route})

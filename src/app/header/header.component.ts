@@ -20,8 +20,8 @@ export class HeaderComponent implements OnInit{
 	}*/
 	ngOnInit(){
 		this.clickOnRecipe=true;
-		this.datastorageservice.getRecipe();
-		this.datastorageservice.getShopingList();
+		//this.datastorageservice.getRecipe();
+		//this.datastorageservice.getShopingList();
 	}
 	shoppingClick(){
 		this.clickOnRecipe=false;

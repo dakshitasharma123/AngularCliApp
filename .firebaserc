@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "recipe-shop-43",
+    "manish-recipe-shop": "mani-recipe-shop",
+    "mani-recipe-shop": "manish-recipe-shop"
+  }
+}
