@@ -9,6 +9,7 @@ export class AppComponent {
 	enable = false;
   	name = '';
     serverName="";
+    serverElement={type:'server',name:'testServer', content:'just a test'};
 createServer()
 {
 	this.serverName=this.name;
