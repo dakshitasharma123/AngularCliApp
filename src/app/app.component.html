@@ -1,13 +1,17 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs 12">
-      <h1>This is my first Angular App!</h1>
-      <app-server [msg]="name"></app-server>
-      <!-- <div class=app-servers></div> -->
-	     <!-- <p *ngIf="serverName!==''">server is created. name is:-{{serverName}} </p> -->
-      <input class="form-control" type="text" [(ngModel)]="name">
-      <!-- <p>{{name}}</p> -->
-      <!-- <button [disabled]="name===''" class="btn btn-danger" (click)="createServer()">Create Server</button> -->
-      <!-- <app-servers></app-servers> -->
+    <div class="col-ms-8">
+      <h1>Should i get job??</h1>
+    </div> 
   </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <h1>Yes {{yes}}</h1>
+    </div>
+    <div class="col-xs-6">
+      <h1>No {{no}}</h1>
+    </div>
+  </div>
+  <app-vote *ngFor = "let name of voter" [name_1]="name" (voted)="checkVote($event)" ></app-vote>
 </div>
+

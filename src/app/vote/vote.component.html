@@ -1,0 +1,12 @@
+<!-- <p>
+  vote works!
+</p> -->
+<div class="container">
+  <div class="row">
+    <div class="col-xs-3">
+      {{name_1}}
+    </div>
+    <button class="btn btn-primary" (click)=voteCount(true) [disabled]="show">Agree</button>
+    <button class="btn btn-danger" (click)=voteCount(false) [disabled]="show">Disagree</button>
+  </div>
+</div>

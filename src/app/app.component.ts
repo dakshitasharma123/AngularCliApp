@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,14 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-	enable = false;
-  	name = '';
-    serverName="";
-    serverElement={type:'server',name:'testServer', content:'just a test'};
-createServer()
-{
-	this.serverName=this.name;
-	this.name="";
-}
+  yes= 0;
+  no= 0;
+
+
+  voter = ['manish','dakshita','ds','dakshi'];
+  checkVote(vote){
+    vote? this.yes++: this.no++;
+  }
 
 }

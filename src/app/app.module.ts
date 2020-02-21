@@ -4,12 +4,11 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import  {ServerComponent} from './server/server.component';
-import { ServersComponent } from './servers/servers.component';
+import { VoteComponent } from './vote/vote.component';
 
 
 @NgModule({
-  declarations: [AppComponent,ServerComponent, ServersComponent],
+  declarations: [AppComponent, VoteComponent],
   imports: [
   	BrowserModule,
   	FormsModule
