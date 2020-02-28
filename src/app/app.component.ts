@@ -6,13 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  yes= 0;
-  no= 0;
-
-
-  voter = ['manish','dakshita','ds','dakshi'];
-  checkVote(vote){
-    vote? this.yes++: this.no++;
+  myTodo = [];
+  taskpush(myData: {taskname: string,duedate:string,createdate:string}){
+    //console.log("app"+ myData);
+    this.myTodo.push(myData);
+    console.log(this.myTodo);
   }
 
 }

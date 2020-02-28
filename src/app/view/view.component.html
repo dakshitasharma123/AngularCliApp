@@ -1,0 +1,31 @@
+
+<table class="table">
+    <thead class="thead-dark"> 
+      <tr>
+        <th>S.N</th> 
+        <th>Taskname</th>
+        <th>Duedate</th>
+        <th>CreatedDate</th>
+        <th>Status</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor = "let data of myTodo; let i=index">
+        <td>{{i+1}}</td>
+        <td>{{data.taskname}}</td>
+        <td>{{data.duedate}}</td>
+        <td>{{data.createdate}}</td>
+        <td><input type="checkbox" 
+          checked data-toggle="toggle" 
+          data-on="Ready" data-off="Not Ready" 
+          data-onstyle="success" data-offstyle="danger">
+        </td>
+        <td><button><i class='fas fa-eye'></i></button>        
+          <button><i class="fas fa-trash" ></i></button>
+        </td>
+      </tr>      
+    </tbody>
+  </table>
+
+  
