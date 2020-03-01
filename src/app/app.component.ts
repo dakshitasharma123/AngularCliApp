@@ -7,10 +7,26 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   myTodo = [];
+
+  editdetail : {taskname: string,duedate:string,createdate:string};
   taskpush(myData: {taskname: string,duedate:string,createdate:string}){
-    //console.log("app"+ myData);
-    this.myTodo.push(myData);
-    console.log(this.myTodo);
+    if(this.myTodo.length){
+      var flag: boolean = false;
+      for(var i=0; i<this.myTodo.length;i++){
+        if(this.myTodo[i].taskname===myData.taskname){
+          flag =  true;
+          this.myTodo[i] = myData;
+        }
+      }
+      if (flag === false){
+        this.myTodo.push(myData);
+      }
+    } else{
+      this.myTodo.push(myData);
+    }
+  }
+  editdata(detail:{taskname: string,duedate:string,createdate:string} ){
+    this.editdetail = detail;
   }
 
 }

@@ -21,8 +21,9 @@
           data-on="Ready" data-off="Not Ready" 
           data-onstyle="success" data-offstyle="danger">
         </td>
-        <td><button><i class='fas fa-eye'></i></button>        
-          <button><i class="fas fa-trash" ></i></button>
+        <td><button title="view"><i class='fas fa-eye'></i></button>        
+          <button title="delete"><i class="fas fa-trash" (click) = "deleteData(i)"></i></button>
+          <button title="edit"><i class="fas fa-edit" (click)="editData(i)"></i></button>
         </td>
       </tr>      
     </tbody>

@@ -3,10 +3,10 @@
     <div class="col-xs-12">
       <h1>To_do List</h1>
       <div class="col-md-6">
-        <app-edit (taskadded)="taskpush($event)"></app-edit>     
+        <app-edit (taskadded)="taskpush($event)" [editdata] = "editdetail"></app-edit>     
       </div>
       <div class="col-md-6">
-        <app-view [myTodo]="myTodo"></app-view>
+        <app-view [myTodo]="myTodo" (editdata)="editdata($event)"></app-view>
       </div>
     </div>
   </div>
