@@ -1,17 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col-ms-8">
-      <h1>Should i get job??</h1>
-    </div> 
+    <h1>To_do_List</h1>
   </div>
   <div class="row">
-    <div class="col-xs-6">
-      <h1>Yes {{yes}}</h1>
+     <div class="col-md-4"> 
+        <app-edit (taskAdded)= "addData($event)" [editDetail]="data"></app-edit><hr>
+        <app-show [showDetail] = "detail"></app-show>
+        <router-outlet></router-outlet>
     </div>
-    <div class="col-xs-6">
-      <h1>No {{no}}</h1>
-    </div>
+    <div class="col-md-8">
+     <app-view [mytodoList]="mytodoList"  (editDetail)="editData($event)" (showData)="showData($event)"></app-view>
+    </div> 
+    
   </div>
-  <app-vote *ngFor = "let name of voter" [name_1]="name" (voted)="checkVote($event)" ></app-vote>
-</div>
+  </div>
+
 

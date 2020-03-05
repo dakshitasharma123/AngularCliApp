@@ -1,4 +1,6 @@
 import { Component, Input } from '@angular/core';
+import {Mytodo} from './mytodo.model';
+// import { from } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -6,13 +8,35 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  yes= 0;
-  no= 0;
-
-
-  voter = ['manish','dakshita','ds','dakshi'];
-  checkVote(vote){
-    vote? this.yes++: this.no++;
+  data:Mytodo;
+  detail: {details:string};
+  mytodoList: Mytodo[] = [];
+  addData(mytodo : Mytodo){
+    if(this.mytodoList.length){
+      var flag: boolean = false;
+      for(var i=0;i<this.mytodoList.length;i++){
+        if(this.mytodoList[i].taskname===mytodo.taskname){
+          flag = true;
+          this.mytodoList[i] = mytodo;
+        }
+      }
+      if(flag === false){
+        this.mytodoList.push(mytodo);
+      }
+    }
+    else{
+      this.mytodoList.push(mytodo);
+    }
   }
+  showData(details:Mytodo){
+    this.detail = details;
+  }
+  
+  editData(detail:Mytodo){
+      this.data=detail;
+      // console.log(this.data);
+  }
+ 
+  
 
 }

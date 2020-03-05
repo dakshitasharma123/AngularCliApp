@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <input
+            type="text"
+            class="form-control"
+            placeholder="Enter Task Name"
+            [(ngModel)]= "taskname"
+            [disabled] = "disabletaskname"
+        >
+        <input
+            type="date"
+            class="form-control"
+            placeholder="Enter create date"
+            [(ngModel)] = "createdate"
+        >
+        <input
+            type="date"
+            class="form-control"
+            placeholder="Enter due date"
+            [(ngModel)] = "duedate"
+        >
+            <textarea 
+            class="form-control rounded-0"
+             id="exampleFormControlTextarea1"
+              rows="5"
+              placeholder="enter details about task"
+              [(ngModel)]="details"
+              ></textarea>
+        
+        </div>
+        
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <button title="click to add task" class="btn btn-primary" (click)="addTask()">Add Task</button>
+        </div>
+       
+    </div>
+</div>
