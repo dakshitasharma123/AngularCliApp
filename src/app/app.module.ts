@@ -1,27 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, Component } from '@angular/core';
- import { FormsModule} from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import {Routes, RouterModule} from '@angular/Router';
 
 
 import { AppComponent } from './app.component';
-import { EditComponent } from './edit/edit.component';
-import { ViewComponent} from './view/view.component';
-import { ShowComponent } from './show/show.component';
-import { Routes, RouterModule } from '@angular/router';
-
-const appRoutes: Routes=[
-  {path: 'show',component: ShowComponent},
-  {path: 'edit',component: EditComponent},
-  {path: 'view',component: ViewComponent}
+import { HomeComponent } from './home/home.component';
+import { UsersComponent } from './users/users.component';
+import { ServersComponent } from './servers/servers.component';
+import { UserComponent } from './users/user/user.component';
+import { EditServerComponent } from './servers/edit-server/edit-server.component';
+import { ServerComponent } from './servers/server/server.component';
+import { ServersService } from './servers/servers.service';
+const myRoute: Routes = [
+  {path: '', component: HomeComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'users', component: UsersComponent},
+  {path: 'users/:id', component: UserComponent},
+  {path: 'servers', component: ServersComponent},
 ];
+
 @NgModule({
-  declarations: [AppComponent, ViewComponent,EditComponent, ShowComponent],
-  imports: [
-  	BrowserModule,
-    FormsModule,
-    RouterModule.forRoot(appRoutes)
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    UsersComponent,
+    ServersComponent,
+    UserComponent,
+    EditServerComponent,
+    ServerComponent
   ],
-  providers: [],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(myRoute)
+  ],
+  providers: [ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

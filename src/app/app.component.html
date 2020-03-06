@@ -1,18 +1,31 @@
 <div class="container">
   <div class="row">
-    <h1>To_do_List</h1>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/">Home</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink='servers'>Servers</a></li>
+        <li role="presentation" routerLinkActive="active"><a routerLink='users'>Users</a></li>
+      </ul>
+    </div>
   </div>
   <div class="row">
-     <div class="col-md-4"> 
-        <app-edit (taskAdded)= "addData($event)" [editDetail]="data"></app-edit><hr>
-        <app-show [showDetail] = "detail"></app-show>
-        <router-outlet></router-outlet>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2"></div>
+      <router-outlet></router-outlet>
+  </div>
+</div>
+  <!-- <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <app-home></app-home>
     </div>
-    <div class="col-md-8">
-     <app-view [mytodoList]="mytodoList"  (editDetail)="editData($event)" (showData)="showData($event)"></app-view>
-    </div> 
-    
   </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <app-users></app-users>
+    </div>
   </div>
-
-
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <app-servers></app-servers>
+    </div>
+  </div>
+  </div> -->
