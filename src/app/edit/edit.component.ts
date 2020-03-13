@@ -1,6 +1,7 @@
 import { Component, Output,EventEmitter, Input, OnChanges, SimpleChanges} from "@angular/core";
 // import { EventEmitter } from "protractor";
 import{Mytodo} from '../mytodo.model';
+import { MytodoService } from "../mytodo.service";
 @Component({
     selector: 'app-edit',
     templateUrl: './edit.component.html'
@@ -12,6 +13,7 @@ export class EditComponent implements OnChanges{
     duedate: string = '';
     disabletaskname: boolean = false;
     details: string='';
+    constructor( private mytodoservice: MytodoService){}
     
 
     @Output() taskAdded = new EventEmitter<Mytodo>();
@@ -24,7 +26,8 @@ export class EditComponent implements OnChanges{
             duedate:this.duedate,
             details: this.details
         };
-        this.taskAdded.emit(todoData);
+        // this.taskAdded.emit(todoData);
+        this.mytodoservice.addTodoList(todoData);
         this.disabletaskname = false;
         this.taskname = '';
         this.createdate = '';

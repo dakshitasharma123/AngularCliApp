@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 import {Mytodo} from '../mytodo.model';
+import { MytodoService } from '../mytodo.service';
 
 @Component({
   selector: 'app-show',
@@ -9,10 +10,14 @@ import {Mytodo} from '../mytodo.model';
 export class ShowComponent implements OnInit, OnChanges {
 
   // @Input() showdetail: {details: string} 
-  @Input() showDetail: Mytodo;
+  // @Input() showDetail: Mytodo;
+  showDetail: Mytodo;
 
 
-  constructor() { }
+  constructor(private mytodoservice: MytodoService) { 
+    //this.showDetail = this.mytodoservice.showTodoListData();
+    //console.log(this.showDetail);
+  }
 
   ngOnInit() {
   }
