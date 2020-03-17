@@ -3,25 +3,25 @@
     <h1>To_do_List</h1>
   </div>
   <div class="row">
-     <div class="col-md-4"> 
+     <div class="col-md-4">
         <app-edit (taskAdded)= "addData($event)" [editDetail]="data"></app-edit><hr>
         <app-show [showDetail] = "detail"></app-show>
         <router-outlet></router-outlet>
     </div>
     <div class="col-md-8">
      <app-view [mytodoList]="mytodoList"  (editDetail)="editData($event)" (showData)="showData($event)"></app-view>
-    </div> 
-    
+    </div>
+
   </div>
   </div>
 
  -->
  <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+    <div class="col">
       <ul class="nav nav-tabs">
         <li role="presentation" routerLinkActive="active" [routerLinkActiveOptions]= "{exact: true}"><a routerLink='/'>Home</a></li>
-        <li role="presentation" routerLinkActive="active"><a routerLink='edit'>Add Task</a></li>
+        <li role="presentation" routerLinkActive="active"  ><a routerLink='addtask'>Add Task</a></li>
       </ul>
     </div>
   </div>

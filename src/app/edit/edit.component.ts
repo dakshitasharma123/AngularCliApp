@@ -1,49 +1,61 @@
-import { Component, Output,EventEmitter, Input, OnChanges, SimpleChanges} from "@angular/core";
-// import { EventEmitter } from "protractor";
-import{Mytodo} from '../mytodo.model';
-import { MytodoService } from "../mytodo.service";
+import { Component, OnInit, OnChanges, SimpleChanges} from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
+import {Mytodo} from '../mytodo.model';
+import { MytodoService } from '../mytodo.service';
 @Component({
     selector: 'app-edit',
     templateUrl: './edit.component.html'
 
 })
-export class EditComponent implements OnChanges{
-    taskname: string = '';
-    createdate: string = '';
-    duedate: string = '';
-    disabletaskname: boolean = false;
-    details: string='';
-    constructor( private mytodoservice: MytodoService){}
-    
+export class EditComponent implements OnInit {
+    taskname: string;
+    createdate: Date;
+    duedate: Date;
+    status = 'Active';
+    disabletaskname = false;
+    details: string;
+    editmode = false;
+    constructor( private mytodoservice: MytodoService, private activatedroute: ActivatedRoute) {}
+    ngOnInit() {
+      const id = this.activatedroute.snapshot.params['id'];
+      if ( id ) {
+        const data =  this.mytodoservice.getTodoList( id - 1 );
+        this.taskname = data.taskname;
+        this.createdate =  new Date(data.createdate);
+        this.duedate = new Date(data.duedate);
+        this.status = data.status;
+        this.details = data.details;
+        this.editmode = true;
+        this.disabletaskname = true;
+      }
+    }
 
-    @Output() taskAdded = new EventEmitter<Mytodo>();
-    
-    @Input() editDetail: Mytodo;
-    addTask(){
+    addTask() {
         const todoData = {
-            taskname:this.taskname, 
-            createdate: this.createdate, 
-            duedate:this.duedate,
+            taskname: this.taskname,
+            createdate: this.createdate.getDate() + '/' + this.createdate.getMonth() + '/' + this.createdate.getFullYear(),
+            duedate: this.duedate.getDate() + '/' + this.duedate.getMonth() + '/' + this.duedate.getFullYear(),
+            status: this.status,
             details: this.details
         };
-        // this.taskAdded.emit(todoData);
-        this.mytodoservice.addTodoList(todoData);
-        this.disabletaskname = false;
-        this.taskname = '';
-        this.createdate = '';
-        this.duedate = '';
-        this.details = '';
-        
-    }
-    ngOnChanges(changes: SimpleChanges){
-        console.log(changes.editDetail.currentValue);
-         if(this.editDetail){
-             this.disabletaskname= true;
-             this.taskname= changes.editDetail.currentValue.taskname;
-             this.createdate = changes.editDetail.currentValue.createdate;
-             this.duedate = changes.editDetail.currentValue.duedate;
-             this.details = changes.editDetail.currentValue.details;
+        if (this.editmode) {
+          this.mytodoservice.updateTodoList(todoData);
+          this.editmode = false;
+        } else {
+          this.mytodoservice.addTodoList(todoData);
+          this.taskname = '';
+          // this.createdate = '';
+          // this.duedate = '';
+          this.status = '';
+          this.details = '';
+          this.disabletaskname = false;
         }
+
+
+
+
+
+
     }
-    
+
 }

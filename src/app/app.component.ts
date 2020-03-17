@@ -8,35 +8,34 @@ import {Mytodo} from './mytodo.model';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  data:Mytodo;
-  detail: {details:string};
+  data: Mytodo;
+  detail: {details: string};
   mytodoList: Mytodo[] = [];
-  addData(mytodo : Mytodo){
-    if(this.mytodoList.length){
-      var flag: boolean = false;
-      for(var i=0;i<this.mytodoList.length;i++){
-        if(this.mytodoList[i].taskname===mytodo.taskname){
+  addData(mytodo: Mytodo) {
+    if (this.mytodoList.length) {
+      let flag = false;
+      for (let i = 0; i < this.mytodoList.length; i++) {
+        if (this.mytodoList[i].taskname === mytodo.taskname) {
           flag = true;
           this.mytodoList[i] = mytodo;
         }
       }
-      if(flag === false){
+      if (flag === false) {
         this.mytodoList.push(mytodo);
       }
-    }
-    else{
+    } else {
       this.mytodoList.push(mytodo);
     }
   }
-  showData(details:Mytodo){
+  showData(details: Mytodo) {
     this.detail = details;
   }
-  
-  editData(detail:Mytodo){
-      this.data=detail;
+
+  editData(detail: Mytodo) {
+      this.data = detail;
       // console.log(this.data);
   }
- 
-  
+
+
 
 }
