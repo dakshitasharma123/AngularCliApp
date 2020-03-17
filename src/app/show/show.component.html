@@ -7,10 +7,25 @@
           TaskName : <p>{{showDetail.taskname}}</p>
           DueDate : <p>{{showDetail.duedate}}</p>
           CreatedDate : <p>{{showDetail.createdate}}</p>
+          Status: <p>{{showDetail.status}}</p>
           Description : <p>{{showDetail.details}}</p>
         </div>
       </div>
-      
+
     </div>
   </div>
-</div> 
+</div>
+<!-- <ng-template #template *ngIf = "showDetail">
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">{{showDetail.taskname}}</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    DueDate : <p>{{showDetail.duedate}}</p>
+    CreatedDate : <p>{{showDetail.createdate}}</p>
+    Status: <p>{{showDetail.status}}</p>
+    Description : <p>{{showDetail.details}}</p>
+  </div>
+</ng-template> -->

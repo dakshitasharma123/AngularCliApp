@@ -3,10 +3,10 @@
 3-> cd <project_name>
 4-> ng serve
 
-inside <priject_name> dir 
+inside <priject_name> dir
 5-> npm install --save bootstrap@3
 
-now go to angular.json which is inside (project_name) folder and modifiy 
+now go to angular.json which is inside (project_name) folder and modifiy
  "styles": [
               "src/styles.css"
             ]
@@ -21,3 +21,16 @@ now go to angular.json which is inside (project_name) folder and modifiy
 
 ----------------------------------------------------------------------
 ---> ng generate component servers
+
+for datepicker:
+
+Step 1 npm install ngx-bootstrap -- save
+
+Step 2: npm install bootstrap@3 --save
+
+Step 3: Open .angular.json file and specify the path to the Bootstrap stylesheet (bootst
+
+"styles": [
+  "node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+  "styles.css"
+]
